@@ -188,12 +188,12 @@ width: 100%;
 }
 
 .demo1 {
-  position: absolute;
-  margin: -8%;
+  /* position: absolute; */
   background-color: #007bff;
   color: white;
-  padding: 5%;
-  margin-left: -20%;
+  padding: 3%;
+  width: fit-content;
+  /* margin-top: -15%; */
 }
 
 .allCap {
@@ -381,38 +381,50 @@ display: block;
 .marg {
   margin: 1%;
   /* color: aliceblue; */
-  border-radius: 5%;
-  width: 31%;
+  border-radius: 10px;
   background-image: linear-gradient(45deg, rgba(223, 234, 238, 0.9), rgba(205, 219, 224, 0.9), rgba(117, 192, 226, 0.9));
   opacity: 0.9;
+  /* width: 100%; */
+  /* padding: 5% 2%; */
+  opacity: 0.9;
+  color: rgb(0, 0, 0);
+}
 
+.marg h4{
+  text-decoration: underline;
+}
+
+.card-body {
+  padding: 0.3rem .25rem !important;
 }
 
 .marg1 {
-  padding: 2%;
+  padding: 1%;
+  letter-spacing: 10px;
+  /* margin: 0 17px; */
   background-image: linear-gradient(45deg, rgba(223, 234, 238, 0.9), rgba(205, 219, 224, 0.9), rgba(117, 192, 226, 0.9));
   opacity: 0.9;
   color: rgb(0, 0, 0);
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
-.marg {
-  width: 100%;
-  padding: 5% 2%;
-  background-image: linear-gradient(45deg, rgba(223, 234, 238, 0.9), rgba(205, 219, 224, 0.9), rgba(117, 192, 226, 0.9));
-  opacity: 0.9;
-  color: rgb(0, 0, 0);
-  border-radius: 30px;
+.card-header{
+  padding: 0.3rem 1.25rem !important;
+}
+
+.marg1 h2{
+  letter-spacing: 10px;
 }
 
 .marg h3{
   font-weight: 600;
   text-decoration: underline;
+  margin: 0;
 }
 
 .marg h5{
   font-weight: 500;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .marg h5 span{
@@ -434,20 +446,13 @@ display: block;
   animation: blink-animation 1s steps(5, start) infinite;
   -webkit-animation: blink-animation 1s steps(5, start) infinite;
 }
-.demo1 {
-  position: absolute;
-  margin: -8%;
-  background-color: 007bff;
-  color: white;
-  padding: 5%;
-}
 
 .allCap {
   text-transform: uppercase;
 }
 
 .heading1 {
-  margin: 1% 35% 1% 35%;
+  margin: 1% 20% 1% 20%;
   background-color: rgba(00, 123, 255, 0.8);
   color: white;
 }
@@ -468,4 +473,56 @@ display: block;
   margin-top: 12%;
   margin-bottom: 12%;
   margin-left: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .row {
+    display: block;
+  }
+
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6{
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  
+}
+
+@media only screen and (max-width: 426px) {
+  .open{
+    display: none;
+  }
+  .home-section{
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .marg1, .marg1 h2{
+    letter-spacing: 5px;
+  }
+}
+
+.card-body span{
+  border: 1px solid black;
+  background-color: white;
+}
+
+.thermometer--normal ul.thermometer__statistics li {
+  width: 100px !important;
+  padding-left: 35px !important;
+}
+
+.thermometer {
+  width: 250px;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+.speedometer{
+  padding-left: 10px;
+  padding-top: 12px;
+  width: 400px !important;
+  height: 200px !important;
+}
+
+.waterlevel {
+  margin-left: 16%;
 }

@@ -30,6 +30,7 @@ img{
   display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 .sidebar .logo-details .icon{
   opacity: 0;

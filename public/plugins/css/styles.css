@@ -109,15 +109,6 @@ width: 100%;
   color: white;
 }
 
-.demo1 {
-  position: absolute;
-  margin: -8%;
-  background-color: #007bff;
-  color: white;
-  padding: 5%;
-  margin-left: -20%;
-}
-
 .allCap {
   text-transform: uppercase;
 }

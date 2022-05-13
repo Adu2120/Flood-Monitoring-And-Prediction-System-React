@@ -21,9 +21,10 @@ export default function VFMSDashboard() {
   return (
     <>
       <div style={{ marginTop: '2%' }}>
-        <div className="row text-center" style={{ margin: 0, padding: '1%' }}>
+        <div className="row text-center" style={{ margin: "0 17px", padding: '1%' }}>
           <div className='col-12 marg1'>
-            <h1>Kolhapur (High Alert Area)</h1>
+            <h1>Kolhapur</h1>
+            <h2>(High Alert Area)</h2>
           </div>
         </div>
         <div className="row" style={{ margin: 0, padding: '1%' }}>
@@ -33,21 +34,50 @@ export default function VFMSDashboard() {
               stations.map((station) => {
                 let alert1 = station.alert;
                 if (alert1 === 'high') {
-                  alert1 = 'rgba(255,0,0,0.6)'
+                  alert1 = 'linear-gradient(45deg, white, red)'
                 } else if (alert1 === 'medium') {
-                  alert1 = 'rgba(255,255,0,0.6)'
+                  alert1 = 'linear-gradient(45deg, white, yellow)'
                 } else if (alert1 === 'low') {
-                  alert1 = 'rgba(0,255,0,0.6)'
+                  alert1 = 'linear-gradient(45deg, white, green)'
                 }
                 return (
-                  <div className='col-4' key={station['id']}>
-                    <div className='marg' style={{ marginTop: '2%', color: 'black' }}>
-                      <h3>{station['name']}</h3>
-                      <h5>Water Level: <span>{station['predicted_wl']}</span></h5>
-                      <h5>Water Flow: <span>{station['predicted_wf']}</span></h5>
-                      {/* <h5>Accuracy: <span>{station['predicted_wf']}</span></h5> */}
+                  <>
+                    {/* <div className='col-4' key={station['id']}>
+                      <div className='marg' style={{ marginTop: '2%', color: 'black' }}>
+                        <h3>{station['name']}</h3>
+                        <h5>Water Level: <span>{station['predicted_wl']}</span></h5>
+                        <h5>Water Flow: <span>{station['predicted_wf']}</span></h5>
+                        <h5>Accuracy: <span>{station['predicted_wf']}</span></h5>
+                      </div>
+                    </div> */}
+
+                    <div className="col-4" key={station['id']}>
+                      <div className="card marg" style={{background: alert}}>
+                        <div className="card-header">
+                          <h3><span><i className='bx bx-location-plus p-2'></i></span>{station['name']}</h3>
+                        </div>
+                        <div className="card-body">
+                          <div style={{display: 'flex', marginTop: '10px'}}>
+                            <h5 className='col-6'>Water Level: </h5>
+                            <span className='col-6'>
+                              {/* <strong> */}
+                                {station['predicted_wl']}
+                              {/* </strong> */}
+                            </span>
+                          </div>
+                          <div style={{display: 'flex', marginTop: '20px', marginBottom: '10px'}}>
+                            <h5 className='col-6'> Water Flow: </h5>
+                            <span className='col-6'>
+                              {/* <strong> */}
+                                {station['predicted_wf']}
+                              {/* </strong> */}
+                            </span>
+                          </div>
+                          {/* <h5><span>{station['predicted_wf']}</span></h5> */}
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </>
                 )
               })
           }

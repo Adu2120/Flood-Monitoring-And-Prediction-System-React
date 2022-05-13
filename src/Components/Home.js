@@ -1,4 +1,5 @@
 import React from 'react'
+// import Chart from 'react-google-charts';
 import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
 export default function Home() {
@@ -10,16 +11,24 @@ export default function Home() {
         unit: 'metric', // values are (metric, standard, imperial)
     });
     return (
-        <div style={{ padding: '5%' }}>
-            <ReactWeather
-                isLoading={isLoading}
-                errorMessage={errorMessage}
-                data={data}
-                lang="en"
-                locationLabel="Kolhapur"
-                unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
-                showForecast
-            />
-        </div>
+        <>
+            {/* Page Heading  */}
+            <div class="rounded-0 shadow-lg text-center allCap">
+                <h1 class="border heading1">Weather Forecast</h1>
+            </div>
+            {/* Page Heading end  */}
+
+            <div style={{ padding: '5%' }}>
+                <ReactWeather
+                    isLoading={isLoading}
+                    errorMessage={errorMessage}
+                    data={data}
+                    lang="en"
+                    locationLabel="Kolhapur"
+                    unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
+                    showForecast
+                />
+            </div>
+        </>
     )
 }
